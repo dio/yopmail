@@ -1,6 +1,6 @@
 {
   "name": "yopmail",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Check your yopmail inbox",
   "main": "index.js",
   "scripts": {
