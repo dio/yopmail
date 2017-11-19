@@ -29,11 +29,9 @@ const inbox = (id, phrase, p = 1) => {
                 });
 
                 if (phrase) {
-                    if (!found) {
-                        if (contains(mail.from, phrase) || contains(mail.subject, phrase)) {
-                            found = true
-                            mails.push(mail)
-                        }
+                    if (contains(mail.from, phrase) || contains(mail.subject, phrase)) {
+                        found = true
+                        mails.push(mail)
                     }
                 } else {
                     mails.push(mail)
