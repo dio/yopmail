@@ -15,7 +15,8 @@ test('mails', t => {
 test('found', t => {
     t.plan(1);
     yopmail('dio', 'girl')
-        .then(({found}) => {
+        .then(({found, mails}) => {
+            console.log(mails)
             t.equal(found, true);
         })
         .catch((err) => {

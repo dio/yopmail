@@ -28,12 +28,16 @@ const inbox = (id, phrase, p = 1) => {
                     html: el.html()
                 });
 
-                if (phrase && !found) {
-                    found = contains(mail.from, phrase) ||
-                        contains(mail.subject, phrase);
+                if (phrase) {
+                    if (!found) {
+                        if (contains(mail.from, phrase) || contains(mail.subject, phrase)) {
+                            found = true
+                            mails.push(mail)
+                        }
+                    }
+                } else {
+                    mails.push(mail)
                 }
-
-                mails.push(mail);
             });
 
             return {found, mails};
